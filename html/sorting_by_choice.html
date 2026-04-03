@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Bubble sorting</title>
+    <title>Sorting by choice</title>
     <link rel="shortcut icon" href="../photo/favicon.png" type="image/x-icon">
 
     <link rel="stylesheet" href="../css/visualBlock.css">
@@ -30,17 +30,17 @@
 
     <main>
         <section>
-            <h1>Bubble sorting</h1>
+            <h1>Sorting by choice</h1>
             <article class="article_text">
-                <p class="sorting">The algorithm iterates through the list, comparing neighboring elements. If the current element is larger than the next, they swap places. As a result of each pass, the largest item "floats" to the end of the list, like an air bubble in water.</p>
+                <p class="sorting">At each step, the algorithm searches for the smallest element in the not-yet-sorted part of the array. The found minimum is reversed with the first element of this part. Thus, the array is gradually filled with the correct values from left to right.</p>
                 <ul class = "sorting">
                     <li>
                         <b>Difficulty: </b>
-                        <p>In the worst and average cases. This makes it slow on large datasets.</p>
+                        <p>Always, even if the array is already almost sorted.</p>
                     </li>
                     <li>
                         <b>Plus: </b>
-                        <p>Simplicity of implementation and minimal memory costs.</p>
+                        <p>Performs a minimum number of permutations, which is useful if writing to memory is "expensive".</p>
                     </li>
                     <li>
                         <b>When to use it: </b>
@@ -59,7 +59,7 @@
         </div>
 
         <script type="module" src="../js/generate.js"></script>
-        <script type="module" src="../js/bubbleSort.js"></script>
+        <script type="module" src="../js/choice_sorting.js"></script>
     </main>
 </body>
 </html>

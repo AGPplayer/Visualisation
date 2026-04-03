@@ -3,12 +3,23 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    font-size: 20px;
+    margin: 0 0;
+    text-align: justify;
+    background-color: #0B0E14;
+    color: #8B949E;
+}
 main {
     width: 80%;
     margin: 0 auto;
+    padding-top: 75px;
 }
 .main_header {
-    border-bottom: 1px solid black;
+    width: 100%;
+    position: fixed;
+    background-color: 0B0E14;
+    border-bottom: 1px solid rgb(255, 255, 255);
 }
 .header {
     width: 90%;
@@ -40,9 +51,18 @@ li {
     list-style-type: none;
 }
 a {
-    color: black;
+    color: #8B949E;
     text-decoration: none;
 }
 a:hover {
-    color: grey;
+    color: #383b3e;
+}
+.marker_li {
+    list-style-type: disc;
+}
+.article_text {
+    margin: 20px 0;
+}
+h1 {
+    text-align: center;
 }
