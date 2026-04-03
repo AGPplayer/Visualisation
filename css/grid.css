@@ -19,6 +19,7 @@
 .cell {
     background-color: black;
     aspect-ratio: 1 / 1;
+    border-radius: 1px;
 }
 .white {
     background-color: white;
@@ -64,4 +65,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: black;
 }
