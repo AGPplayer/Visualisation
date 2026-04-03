@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Bubble sorting</title>
+    <title>Wave Algorithm</title>
     <link rel="shortcut icon" href="../photo/favicon.png" type="image/x-icon">
 
-    <link rel="stylesheet" href="../css/visualBlock.css">
+    <link rel="stylesheet" href="../css/grid.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -30,36 +30,39 @@
 
     <main>
         <section>
-            <h1>Bubble sorting</h1>
+            <h1>Wave Algorithm</h1>
             <article class="article_text">
-                <p class="sorting">The algorithm iterates through the list, comparing neighboring elements. If the current element is larger than the next, they swap places. As a result of each pass, the largest item "floats" to the end of the list, like an air bubble in water.</p>
+                <p class="sorting">Wave Algorithm (also known as Lee algorithm) is a grid-based method for finding the shortest path between two points. The process begins at the starting cell. The algorithm then "spreads" like a wave to all adjacent neighbors. This expansion continues layer by layer until the target cell is reached or no more moves are possible. Finally, the shortest path is reconstructed by retracing the steps from the target back to the start in descending order.</p>
                 <ul class = "sorting">
                     <li>
                         <b>Difficulty: </b>
-                        <p>In the worst and average cases. This makes it slow on large datasets.</p>
+                        <p>The time and space complexity are both O(N × M), where N and M are the dimensions of the grid.</p>
                     </li>
                     <li>
                         <b>Plus: </b>
-                        <p>Simplicity of implementation and minimal memory costs.</p>
+                        <p>It is simple to implement and always guarantees finding the shortest path if one exists.</p>
                     </li>
                     <li>
                         <b>When to use it: </b>
-                        <p>Only for educational purposes or for very small arrays where speed is not critical.</p>
+                        <p>Use it for pathfinding in mazes.</p>
                     </li>
                 </ul>
             </article>
         </section>
 
-        <div id="visualBlock">
-            <div id="container"></div>
-            <div class="buttons">
-                <button id="restart">restart</button>
-                <button id="start">start</button>
+        <section class="grid_block">
+            <div id="grid_container"></div>
+            <div class="buttons_grid">
+                <div class="buttons_inGrid">
+                    <div class="button" id="clear">clear</div>
+                    <div class="button" id="start">start</div>
+                </div>
+                <div id="grid_text"></div>
             </div>
-        </div>
-
-        <script type="module" src="../js/generate.js"></script>
-        <script type="module" src="../js/bubbleSort.js"></script>
+        </section>
     </main>
+
+    <script src="../js/grid_generate.js"></script>
+    <script src="../js/lee.js"></script>
 </body>
 </html>

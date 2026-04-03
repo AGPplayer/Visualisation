@@ -3,18 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
-    font-size: 20px;
-    margin: 0 0;
-    text-align: justify;
-    background-color: #0B0E14;
-    color: #8B949E;
-}
-main {
-    width: 80%;
-    margin: 0 auto;
-    padding-top: 75px;
-}
 .main_header {
     width: 100%;
     position: fixed;
@@ -37,6 +25,11 @@ main {
 .logo_text {
     margin-left: 5px;
 }
+.logopng {
+    border: 1px solid #383b3e;
+    border-radius: 5px;
+    opacity: 0.9;
+}
 .header_menu {
     display: flex;
     flex-direction: row;
@@ -46,6 +39,18 @@ main {
 }
 .button_header {
     margin: 0 2%;
+}
+body {
+    font-size: 20px;
+    margin: 0 0;
+    text-align: justify;
+    background-color: #0B0E14;
+    color: #8B949E;
+}
+main {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 75px;
 }
 li {
     list-style-type: none;

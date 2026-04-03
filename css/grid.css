@@ -1,0 +1,67 @@
+.grid_block {
+    background-color: #161B22;
+    border: 5px solid brown;
+    border-radius: 20px;
+    max-width: 400px;
+    margin: 50px auto;
+    height: auto;
+}
+#grid_container {
+    width: 90%;
+    height: auto;
+    margin: 5% auto;
+    background-color: brown;
+    border: 2px solid brown;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 2px;
+}
+.cell {
+    background-color: black;
+    aspect-ratio: 1 / 1;
+}
+.white {
+    background-color: white;
+}
+.buttons_grid {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 5% auto;
+    width: 90%;
+    gap: 10px;
+}
+.buttons_inGrid{
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.button {
+    width: 100px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 100px;
+    background-color: #1F6FEB;
+    transition: transform 0.1s ease-in-out,  box-shadow 0.1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+.button:hover {
+    background-color: #58A6FF;
+    box-shadow: 0px 0px 5px 5px rgba(255, 255, 255, 0.1);
+    transform: scale(110%);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+#grid_text {
+    width: 100px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 100px;
+    background-color: #1F6FEB;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
