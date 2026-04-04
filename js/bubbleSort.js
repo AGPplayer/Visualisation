@@ -38,7 +38,6 @@ async function bubbleSort() {
             await sleep(500);
         }
         array[n - 1 - i].style.boxShadow = '0px 0px 5px 5px rgba(255, 255, 255, 0.8)';
-        await sleep(500);
     }
 
     await sleep(500);

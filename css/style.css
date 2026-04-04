@@ -45,7 +45,8 @@ body {
     margin: 0 0;
     text-align: justify;
     background-color: #0B0E14;
-    color: #8B949E;
+    color: #eaecf0;
+    line-height: 1.4;
 }
 main {
     width: 80%;
@@ -56,7 +57,7 @@ li {
     list-style-type: none;
 }
 a {
-    color: #8B949E;
+    color: #eaecf0;
     text-decoration: none;
 }
 a:hover {
@@ -70,4 +71,10 @@ a:hover {
 }
 h1 {
     text-align: center;
+}
+.ul_t {
+    margin-left: 30px;
+}
+p {
+    font-weight: 200;
 }

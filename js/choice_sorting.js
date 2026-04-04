@@ -49,7 +49,7 @@ async function choiceSorting() {
         await sleep(300);
     }
 
-    await sleep(500);
+    await sleep(300);
     for (let i = n - 1; i > -1; i--) {
         array[i].style.boxShadow = 'none';
         await sleep(500);

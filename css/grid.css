@@ -6,6 +6,16 @@
     margin: 50px auto;
     height: auto;
 }
+canvas {
+    max-width: 300px;
+    width: 90%;
+    aspect-ratio: 1 / 1;
+    box-sizing: content-box;
+    border: 2px solid brown;
+    background-color: black;
+    display: block;
+    margin: 5% auto;
+}
 #grid_container {
     width: 90%;
     height: auto;
@@ -36,6 +46,8 @@
     justify-content: start;
     flex-wrap: wrap;
     gap: 10px;
+    color: black;
+    font-weight: 600;
 }
 .button {
     width: 100px;
@@ -66,4 +78,23 @@
     justify-content: center;
     align-items: center;
     color: black;
+    font-weight: 600;
+}
+.textLabel {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+}
+.Lab {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 5%;
+    background-color: #1F6FEB;
+    border: 2px solid black;
+    border-radius: 100px;
+}
+.checkbox {
+    width: 20px;
 }

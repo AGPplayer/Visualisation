@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Игра "Жизнь"</title>
+    <link rel="shortcut icon" href="../photo/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="../css/grid.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="main_header">
+        <section class="header">
+            <div class="logo">
+                <img src="../photo/favicon.png" alt="logo" width="50px" class="logopng">
+                <h4 class="logo_text">Visualization</h4>
+            </div>
+            <ul class="header_menu">
+                <li class="button_header">
+                    <a href="../index.html"><h4>Главня</h4></a>
+                </li>
+                <li class="button_header">
+                    <h4>Инфо</h4>
+                </li>
+            </ul>
+        </section>
+    </header>
+
+    <main>
+        <section>
+            <h1>Игра "Жизнь"</h1>
+            <article class="article_text">
+                <p class="sorting">Игра «Жизнь» — клеточный автомат, придуманный английским математиком Джоном Конвеем в 1970 году. 
+                                    Это игра без игроков, в которой человек создаёт начальное состояние, а потом лишь наблюдает за её развитием.</p>
+                <h4>Правила</h4>
+                <ul class="ul_t">
+                    <li class="marker_li">
+                        Место действия игры — размеченная на клетки плоскость, которая может быть безграничной, ограниченной или замкнутой.
+                    </li>
+                    <li class="marker_li">
+                        Каждая клетка на этой поверхности имеет восемь соседей, окружающих её, и может находиться в двух состояниях: быть «живой» (заполненной) или «мёртвой» (пустой).
+                    </li>
+                    <li class="marker_li">
+                        <p>Распределение живых клеток в начале игры называется первым поколением. Каждое следующее поколение рассчитывается на основе предыдущего по таким правилам:</p>
+                        <ul class="ul_t">
+                            <li class="marker_li">
+                                в пустой (мёртвой) клетке, с которой соседствуют три живые клетки, зарождается жизнь;
+                            </li>
+                            <li class="marker_li">
+                                если у живой клетки есть две или три живые соседки, то эта клетка продолжает жить; в противном случае (если живых соседей меньше двух или больше трёх) клетка умирает («от одиночества» или «от перенаселённости»).
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="grid_block">
+            <div class="textLabel">
+                <label for="bodering_field" class="Lab">
+                    Замкнутая область
+                    <input type="checkbox" id="bodering_field" class="checkbox">
+                </label>
+                <label for="speed_mode" class="Lab">
+                    Ускоренный режим
+                    <input type="checkbox" id="speed_mode" class="checkbox">
+                </label>
+            </div>
+            
+            <canvas id="canvas_life" width="600px" height="600px"></canvas>
+
+            <div class="buttons_grid">
+                <div class="buttons_inGrid">
+                    <div class="button" id="clear">Очистить</div>
+                    <div class="button" id="start">Старт</div>
+                </div>
+                <div id="grid_text"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/gameLife.js"></script>
+</body>
+</html>
