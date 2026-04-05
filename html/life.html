@@ -22,7 +22,7 @@
                     <a href="../index.html"><h4>Главня</h4></a>
                 </li>
                 <li class="button_header">
-                    <h4>Инфо</h4>
+                    <a href="./info.html"><h4>Инфо</h4></a>
                 </li>
             </ul>
         </section>
@@ -64,12 +64,17 @@
                     <input type="checkbox" id="bodering_field" class="checkbox">
                 </label>
                 <label for="speed_mode" class="Lab">
-                    Ускоренный режим
-                    <input type="checkbox" id="speed_mode" class="checkbox">
+                    <div id="forspeed">
+                        <p id="speedtext">x1</p>
+                        <input type="range" id="speed_mode" class="checkbox" min="1" max="20" step="1" value="1">
+                    </div>
+                </label>
+                <label for="size_nume" class="Lab">
+                    <input type="number" id="size_nume" min='1' max='128' placeholder="Ширина в клетках">
                 </label>
             </div>
             
-            <canvas id="canvas_life" width="600px" height="600px"></canvas>
+            <canvas id="canvas_life" width="1024px" height="1024px"></canvas>
 
             <div class="buttons_grid">
                 <div class="buttons_inGrid">

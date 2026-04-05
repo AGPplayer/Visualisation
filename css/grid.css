@@ -89,6 +89,8 @@ canvas {
 .Lab {
     display: flex;
     justify-content: center;
+    height: 40px;
+    align-items: center;
     gap: 10px;
     margin-top: 5%;
     background-color: #1F6FEB;
@@ -97,4 +99,16 @@ canvas {
 }
 .checkbox {
     width: 20px;
+}
+#size_nume {
+    width: 80%;
+}
+#forspeed {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+#speed_mode {
+    flex-grow: 1;
 }

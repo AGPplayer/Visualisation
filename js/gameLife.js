@@ -3,9 +3,29 @@ const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 const canvas = document.getElementById('canvas_life');
 const ctx = canvas.getContext('2d');
 
-const k = 40;
+let k;
+const canvasw = canvas.width;
 
-const array = Array.from({ length: 15 }, () => Array(15).fill(false));
+const array = Array.from({ length: 128 }, () => Array(128).fill(false));
+
+const sizeinp = document.getElementById('size_nume');
+sizeinp.addEventListener('change', function() {
+    if (sizeinp.value > 128)
+        sizeinp.value = 128;
+    if (sizeinp.value < 1)
+        sizeinp.value = 1;
+    k = Math.floor(canvasw / sizeinp.value);
+    clear();
+});
+
+const rangespeed = document.getElementById('speed_mode');
+const textspeed = document.getElementById('speedtext');
+
+let speedconst = 1;
+rangespeed.addEventListener('change', function() {
+    speedconst = rangespeed.value;
+    textspeed.textContent = `x${speedconst}`;
+});
 
 canvas.addEventListener('mousedown', (e) => {
     const rect = canvas.getBoundingClientRect();
@@ -22,12 +42,11 @@ canvas.addEventListener('mousedown', (e) => {
 
     if (array[row][col]) {
         ctx.fillStyle = 'white';
-        ctx.fillRect(col * k, row * k, k, k);
     }
     else {
         ctx.fillStyle = 'black';
-        ctx.fillRect(col * k, row * k, k, k);
     }
+    ctx.fillRect(col * k, row * k, k, k);
 });
 
 const clearbtn = document.getElementById('clear');
@@ -40,18 +59,19 @@ const speedbox = document.getElementById('speed_mode');
 const borderbox = document.getElementById('bodering_field');
 
 
-clearbtn.addEventListener('click', (clear) => {
+clearbtn.addEventListener('click', clear);
+function clear() {
     text.textContent = 0;
     startbtn.disabled = false;
     borderbox.disabled = false;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (let i = 0; i < 15; i++) {
-        for (let j = 0; j < 15; j++) {
+    for (let i = 0; i < 128; i++) {
+        for (let j = 0; j < 128; j++) {
             array[i][j] = false;
         }
     }
-});
+}
 
 startbtn.addEventListener('click', game);
 async function game() {
@@ -60,17 +80,18 @@ async function game() {
     text.textContent = 0;
 
     for (let day = 1; true; day++) {
-        const newa = Array.from({ length: 15 }, () => Array(15).fill(false));
+        const newa = Array.from({ length: 128 }, () => Array(128).fill(false));
         const dx = [0, 1, 1, 1, 0, -1, -1, -1];
         const dy = [-1, -1, 0, 1, 1, 1, 0, -1];
 
-        for (let i = 0; i < 15; i++) {
-            for (let j = 0; j < 15; j++) {
+        const m = Math.floor(canvasw / k);
+        for (let i = 0; i < m; i++) {
+            for (let j = 0; j < m; j++) {
                 let col = 0;
 
                 for (let q = 0; q < 8; q++) {
-                    if (i + dy[q] >= 0 && i + dy[q] < 15 &&
-                        j + dx[q] >= 0 && j + dx[q] < 15
+                    if (i + dy[q] >= 0 && i + dy[q] < m &&
+                        j + dx[q] >= 0 && j + dx[q] < m
                     ) {
                         if (array[i + dy[q]][j + dx[q]]) {
                             col++;
@@ -82,15 +103,15 @@ async function game() {
                             let nx = j + dx[q];
 
                             if (nx == -1) {
-                                nx = 14;
+                                nx = m - 1;
                             }
-                            if (nx == 15) {
+                            if (nx == m) {
                                 nx = 0;
                             }
                             if (ny == -1) {
-                                ny = 14;
+                                ny = m - 1;
                             }
-                            if (ny == 15) {
+                            if (ny == m) {
                                 ny = 0;
                             }
 
@@ -112,8 +133,8 @@ async function game() {
 
         let isLife = false;
 
-        for (let i = 0; i < 15; i++) {
-            for (let j = 0; j < 15; j++) {
+        for (let i = 0; i < m; i++) {
+            for (let j = 0; j < m; j++) {
                 array[i][j] = newa[i][j];
 
                 if (array[i][j]) {
@@ -129,12 +150,7 @@ async function game() {
         }
 
         text.textContent = day;
-        if (speedbox.checked) {
-            await sleep(50);
-        }
-        else {
-            await sleep(200);
-        }
+        await sleep(300 / speedconst);
 
         if (!isLife) {
             startbtn.disabled = false;
